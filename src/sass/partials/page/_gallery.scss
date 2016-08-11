@@ -1,0 +1,80 @@
+﻿@import "../../modules/_base.scss";
+/*Page Image Gallery*/
+.b-gallery{
+    margin-bottom:15px;
+    max-height:220px;
+    overflow:hidden;
+}
+
+.b-gallery__nav{
+    height:36px;
+    position:relative;
+
+    a{
+        display:block;
+        @include size(36px);
+        line-height:36px;
+        text-align:center;
+        font-size:rem(26px);
+        position:absolute;
+        top:0;
+        color:$text-color;
+
+        &:hover,
+        &:active{
+            color:$primary;
+        }
+
+        &.disabled{
+            color:$text-color-light;
+            cursor:default;
+        }
+    }
+    .bx-prev{
+        left:50%;
+        margin-left:-37px;
+    }
+    .bx-next{
+        right:50%;
+        margin-right:-37px;
+    }
+}
+
+.b-gallery__slider{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+
+.b-gallery__item{
+    @extend .g-column;
+    width:25%;
+}
+
+.b-gallery__link{
+    display:block;
+    max-width:240px;
+    margin:0 auto;
+    position:relative;
+    background:$bg-alt;
+    border-radius:$border-radius;
+    overflow:hidden;
+    z-index:1; //чтобы работал border-radius
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:75%; //4x3
+    }
+
+    &:hover{
+        .b-gallery__img{
+            opacity:.7;
+        }
+    }
+}
+
+.b-gallery__img{
+    @extend .g-img-centered;
+    @include backface-visibility(hidden);
+    @include transition(opacity .3s ease-in);
+}

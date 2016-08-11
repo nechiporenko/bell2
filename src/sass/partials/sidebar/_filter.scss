@@ -1,0 +1,85 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar Filter*/
+.b-filter{
+    @extend .b-manager__inner;
+    height:auto;
+    margin-bottom:$project-line-height + 20px;
+    line-height:1;
+    overflow:visible;
+
+    .g-select,
+    .g-input{
+        margin-bottom:$project-line-height;
+        background:$bg-alt;
+    }
+
+    .selectric-wrapper{
+        margin-bottom:$project-line-height;
+    }
+    .selectric{
+        background:$bg-alt;
+    }
+}
+
+.b-filter__inner{
+    max-width:520px;
+    margin:0 auto;
+}
+
+.b-filter__title{
+    display:block;
+    margin-bottom:8px;
+    line-height:1;
+    font-family:$font-bold;
+    @include font-size(14px);
+    text-transform:uppercase;
+}
+
+.b-filter__row{
+    @extend .g-row;
+    margin-left:-7px;
+    margin-right:-7px;
+}
+
+.b-filter__column{
+    @extend .g-column;
+    padding-left:7px;
+    padding-right:7px;
+    width:50%;
+}
+
+.b-filter__date{
+    position:relative;
+
+    &:before,
+    &:after{
+        content:'';
+        @include size(2px);
+        background:$text-color;
+        position:absolute;
+        bottom:$project-line-height - 1px;
+    }
+
+    &:before{
+        left:33.33333333333333%;
+        margin-left:-5px;
+    }
+
+    &:after{
+        right:33.33333333333333%;
+        margin-right:-5px;
+    }
+
+    .b-filter__column{
+        width:33.33333333333333%;
+    }
+}
+
+.b-filter__btn{
+    @extend .g-btn;
+    @extend .g-btn--xl;
+
+    @include media($large){
+        width:100%;
+    }
+}

@@ -1,0 +1,43 @@
+﻿@import "../../modules/_base.scss";
+/*Item's Static List*/
+.b-list{
+    list-style-type:none;
+    padding:0;
+    margin:0 -15px;
+    @extend .g-clearfix;
+}
+
+.b-list__item{
+    @extend .g-col;
+    margin-bottom:45px;
+
+    @include media($small){
+        width:50%;
+    }
+
+    @include media($tablet){
+        width:33.33333333333333%;
+    }
+
+    @include media($desktop){
+        width:25%;
+    }
+
+    @include media($large){
+        width:33.33333333333333%;
+    }
+}
+
+.b-list__item--centered{
+    @include media($tablet){
+        margin-left:33.33333333333333%;
+    }
+
+    @include media($desktop){
+        margin-left:0;
+    }
+
+    @include media($large){
+        margin-left:33.33333333333333%;
+    }
+}

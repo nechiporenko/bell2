@@ -1,0 +1,63 @@
+﻿@import "../../modules/_base.scss";
+/*Subscribe Sidebar block*/
+.b-subscribe{
+    padding:30px 22px;
+    margin:0 0 45px;
+    border-radius:$border-radius;
+    background:$primary;
+    color:#fff;
+    box-sizing:border-box;
+    @extend .g-shadow-hover;
+    line-height:1.2;
+    font-family:$font-light;
+}
+
+.b-subscribe__title{
+    @extend .g-title;
+    color:#fff;
+}
+
+.b-subscribe__inner{
+    @extend .b-order__inner;
+}
+
+.b-subscribe__info{
+    overflow:hidden;
+    margin-bottom:10px;
+    text-align:justify;
+}
+
+.b-subscribe__input{
+    @extend .g-input;
+    @extend .g-input--alt;
+    margin-bottom:15px;
+    border-color:lighten($primary, 25%);
+    background:$primary;
+    color:$primary-light;
+
+    @include placeholder{
+        color:#fff;
+    }
+
+    &:hover,
+    &:focus{
+        border-color:$primary-light;
+    }
+}
+
+.b-subscribe__btn{
+    width:100%;
+    margin-top:5px;
+    @extend .g-btn;
+    @extend .g-btn--alt;
+    @extend .g-btn--xl;
+}
+
+@include media($large){
+    .b-subscribe{
+        height:400px;
+    }
+    .b-subscribe__info{
+        height:114px;
+    }
+}

@@ -1,0 +1,39 @@
+﻿@import "../../modules/_base.scss";
+/*Breadcrumbs*/
+.breadcrumbs{
+    padding:0;
+    margin:13px 0 14px;
+    @include font-size(12px);
+    line-height:1.1;
+    list-style-type:none;
+    color:$text-color-gray;
+
+    .wf-active &{
+        font-family:$font-thin;
+    }
+}
+.breadcrumbs__item{
+    display:inline-block;
+    position:relative;
+
+    &:after{
+        content:'/';
+        margin:0 5px;
+    }
+
+    &:last-child{
+        &:after{
+            display:none;
+        }
+    }
+}
+.breadcrumbs__link{
+    color:$text-color-gray;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary;
+        text-decoration:underline;
+    }
+}

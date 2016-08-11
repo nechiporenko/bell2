@@ -1,0 +1,30 @@
+﻿@import "../../modules/_base.scss";
+/*Page image slider*/
+.b-img-slider{
+    margin-bottom:$project-line-height;
+    position:relative;
+
+    @include media($tablet){//на странице стрелки навигации не используются (пейджер) - оставим на всякий случай
+        .b-img-slider__nav a{
+            top:-52px;
+            margin-top:0;
+        }
+        .bx-next{
+            right:0;
+        }
+        .bx-prev{
+            left:auto;
+            right:35px;
+        }
+    }
+}
+
+.b-img-slider__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+
+    .no-js &{
+        max-height:400px;
+        overflow:hidden;
+    }
+}

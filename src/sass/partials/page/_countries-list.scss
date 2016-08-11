@@ -1,0 +1,77 @@
+﻿@import "../../modules/_base.scss";
+/*List of countries*/
+.b-country{
+    list-style-type:none;
+    padding:0;
+    @extend .g-clearfix;
+}
+
+.b-country__item{
+    @extend .g-column;
+
+    @include media($mobile){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+}
+
+.b-country__link{
+    display:block;
+    color:$text-color;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary;
+        .b-country__img{
+            opacity:.8;
+        }
+    }
+}
+
+.b-country__inner{
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.b-country__thumb{
+    @extend .b-flags__thumb;
+    width:86px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.b-country__img{
+    @extend .b-flags__img;
+}
+
+.b-country__title{
+    font-family:$font-medium;
+    @include font-size(20px);
+    line-height:1.1;
+}
+
+@include media($desktop){
+    .b-country__inner{
+        display:flex;
+        align-items:center;
+        text-align:left;
+    }
+
+    .b-country__thumb{
+        margin:0 !important;
+    }
+    .b-country__title{
+        padding-left:10px;
+
+        .no-flexbox &{
+            padding-left:0;
+        }
+    }
+}

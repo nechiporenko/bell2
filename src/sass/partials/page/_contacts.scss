@@ -1,0 +1,68 @@
+﻿@import "../../modules/_base.scss";
+/*Contacts Page*/
+.b-map{
+    height:320px;
+    margin-bottom:35px;
+    background:$bg-alt;
+    @extend .g-shadow-hover;
+
+    @include media($small){
+        height:435px;
+    }
+}
+
+.b-map__title{
+    @extend .g-subtitle;
+    margin-bottom:0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.b-contacts{
+    @extend .g-row;
+    margin-bottom:35px;
+}
+.b-contacts__col{
+    @extend .g-col;
+}
+
+.b-contacts__inner{
+    padding-left:25px;
+    position:relative;
+
+    &:before{
+        font-family:'icomoon';
+        position:absolute;
+        top:0; left:0;
+        color:$text-color-gray;
+        font-size:rem(16px);
+    }
+}
+
+.b-contacts__inner--addr{
+    margin-bottom:$project-line-height/2;
+    &:before{
+        content:'\e90d'
+    }
+}
+
+.b-contacts__inner--phones{
+    line-height:1.6;
+    &:before{
+        content:'\e910';
+    }
+}
+
+@include media($large){
+    .b-contacts__col--info{
+        width:28%;
+    }
+
+    .b-contacts__col--managers{
+        width:72%;
+    }
+
+    .b-contacts .b-manager__col{
+        width:50%;
+    }
+}

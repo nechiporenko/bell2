@@ -1,0 +1,163 @@
+﻿@import "base";
+/* Forms */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+    @include appearance(none);
+}
+
+.g-input,
+.g-select,
+.g-textarea{
+    display:inline-block;
+    vertical-align:middle;
+    width:100%;
+    margin-bottom: $project-line-height;
+    padding:6px 10px;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius:$border-radius;
+    color:$text-color;
+    @include font-size(15px);
+    font-family:$font-light-italic;
+    font-style:italic;
+    box-shadow: none;
+    box-sizing: border-box;
+
+    @include placeholder{
+        color:$text-color-gray;
+        text-overflow:ellipsis;
+    }
+
+    &:hover,
+    &:focus{
+        border-color:$primary;
+        outline:0;
+    }
+
+    &:focus{
+        box-shadow:inset 0 0 4px rgba($primary, .5);
+    }
+
+    &:disabled{
+        border-color:$border-color;
+        box-shadow:inset 0 0 4px rgba($border-color, .8);
+    }
+
+    &.error{
+        border-color:red;
+        box-shadow:inset 0 0 4px rgba(red, .5);
+
+        @include placeholder{
+            color:red;
+        }
+    }
+}
+
+.g-input,
+.g-select{
+    height:32px;
+}
+
+.g-textarea{
+    min-height:80px;
+}
+
+.g-label{
+    display: block;
+    margin-bottom:$project-line-height/3;
+
+    &.error{
+        color:red;
+    }
+}
+.g-label__body{
+    display: inline-block;
+    margin-left:10px;
+    font-weight: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+
+
+/*Alt form elments style*/
+.g-input--alt,
+.g-select--alt,
+.g-textarea--alt{
+    padding:6px 0;
+    margin-bottom:7px;
+    border-radius:0;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+
+    &:hover,
+    &:focus,
+    &:disabled,
+    &.error{
+        box-shadow:none;
+    }
+}
+
+.g-input--alt,
+.g-select--alt{
+    height:36px;
+}
+
+
+/*Custom checkboxes & radio*/
+input[type=checkbox].g-checkbox,
+input[type=radio].g-radio {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+label.g-checkbox-label,
+label.g-radio-label {
+    display:inline-block;
+    margin-bottom:0;
+    -webkit-touch-callout: none;
+    @include user-select(none);
+    font-size:rem(16px);
+    color:$text-color;
+}
+
+input[type=checkbox].g-checkbox + label.g-checkbox-label,
+input[type=radio].g-radio + label.g-radio-label{
+    padding-left:25px;
+	display:inline-block;
+    vertical-align:middle;
+    line-height:20px;
+    cursor:pointer;
+    background-repeat:no-repeat;
+    background-position:left top;
+}
+
+
+
+input[type=checkbox].g-checkbox + label.g-checkbox-label {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUAgMAAADw5/WeAAAADFBMVEX////f5en3+Pnx9PXshhS5AAAAHklEQVQI12MIBQGGqlWrVq1lSGBgYOCkHQmxBWIjANUJEC30MqfbAAAAAElFTkSuQmCC);
+}
+
+input[type=checkbox].g-checkbox:checked + label.g-checkbox-label{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAJFBMVEX///86OjrOzs7x8fHZ2dlgYGBHR0ezs7OFhYWoqKjAwMB5eXnEOPAbAAAAY0lEQVQI12MQhAMGSSUomMggxAAFiliYLnAmS5oDjOkmmAJidgAFEwWDgUwOwQagoKgBkKkoKAESBGljFxTcBhQEm1AItDQYYi5QGCgIZgKFg2G2sQMFYRYvxnQOgolwOpKHAJeuEZku8ZUvAAAAAElFTkSuQmCC);
+}
+
+
+input[type=radio].g-radio + label.g-radio-label {	
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAKlBMVEUAAADg5Orf5enf5enf5ung5enf5unf5erf5ejf5Oje5evg4Ovm5ubf5ek7o0J/AAAADXRSTlMAS4D25tvIspFxJxkKBZOKdAAAAGxJREFUCNdjAAKhEndFBjBYdhcIskAsTtsg6Y2qlycAmXNvHGBg4Om9ycDAZSsAkmO8vICB7QZER28Cg2wMhHn0IoOuAoTJdImhVgDCZLzO4LsBwuS+gsxEKEDWhjAM2QqExQjnoDoS4XSEhwDVSiwZLvQ41wAAAABJRU5ErkJggg==);
+}
+
+input[type=radio].g-radio:checked + label.g-radio-label{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAM1BMVEUAAAA7Ozs6Ojo6Ojo6Ojo6Ojo5OTk5OTk5OTk6Ojo7Ozs6Ojo7Ozs9PT0zMzM7Ozs6OjqttdU2AAAAEHRSTlMAS+eA9tvItrKRcUYnGQqHenfwowAAAIJJREFUGNNtkUsSwyAMQ/3hGyDR/U9bQ9xpF34LxiOQMIZeWJtIU6Yfs8Ap86tdCVl5LdaMdLkG9Pst7w4cdSb8RTHSTijoto4qUocVHWVvZfM+ODyWkM2oUDsHZ9AR2k6scOq2NhIsssURogUJxdAeXhS2FDUfPjMaSDy6eMjhd3wAzQwKuZnJIeUAAAAASUVORK5CYII=);
+}
+
+
+

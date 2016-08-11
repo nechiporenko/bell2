@@ -1,0 +1,37 @@
+﻿@import "../../modules/_base.scss";
+/*Header social links*/
+.h-social{
+    @extend .g-clearlist;
+    font-size:0;
+    text-align:center;
+    display:none;
+
+    @include media($tablet){
+        display:block;
+    }
+}
+
+.h-social__item{
+    display:inline-block;
+    vertical-align:middle;
+    @include font-size(16px);
+    margin:0 5px;
+}
+.h-social__link{
+    display:block;
+    @include size(30px);
+    box-sizing:border-box;
+    box-shadow:inset 0 0 0 1px $text-color-gray;
+    border-radius:50%;
+    line-height:28px;
+    text-align:center;
+    color:$text-color-gray;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        background:$primary;
+        color:#fff;
+        box-shadow:inset 0 0 0 1px $primary;
+    }
+}

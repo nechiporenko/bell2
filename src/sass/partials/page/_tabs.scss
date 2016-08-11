@@ -1,0 +1,114 @@
+﻿@import "../../modules/_base.scss";
+/*Page tabs*/
+.b-tabs{
+    margin-bottom:35px;
+
+    .b-order{
+        margin:50px 0 0;
+    }
+}
+.b-tabs__content{
+    padding:10px;
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    border-top-left-radius:0;
+}
+
+.b-tabs__list{
+    @extend .g-clearlist;
+    font-size:0;
+    line-height:1;
+}
+
+.b-tabs__item{
+    display:block;
+    padding-right:15px;
+    @include font-size(16px);
+
+    &.current{
+        .b-tabs__link{
+            padding-top:17px;
+            background:#fff;
+            color:$primary;
+            text-transform:uppercase;
+            cursor:default;
+        }
+    }
+}
+
+.b-tabs__link{
+    display:inline-block;
+    width:100%;
+    padding:11px 25px;
+    color:$text-color;
+    text-decoration:none;
+    font-family:$font-bold;
+    border:1px solid $border-color;
+    border-bottom:none;
+    background:$bg-alt;
+    box-sizing:border-box;
+    position:relative;
+
+    &:after{
+        content:'';
+        position:absolute;
+        height:6px;
+        left:0; right:0; bottom:-3px;
+        background:#fff;
+        display:none;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+        background:#fff;
+    }
+}
+
+
+
+@include media($small){
+    .b-tabs__link{
+        width:70%;
+    }
+}
+
+@include media($tablet){
+    .b-tabs__content{
+        padding:20px;
+    }
+}
+
+@include media($desktop){
+    .b-tabs__item{
+        display:inline-block;
+        padding:0;
+        margin-left:10px;
+
+        &:first-child{
+            margin-left:0;
+        }
+
+        &.current{
+            .b-tabs__link{
+                &:after{
+                    display:block;
+                }
+            }
+        }
+    }
+
+    .b-tabs__link{
+        width:auto;
+        border-top-left-radius:$border-radius;
+        border-top-right-radius:$border-radius;
+    }
+}
+
+
+/*Tabs Navigation (page menu)*/
+.b-tabs--nav{
+    margin-bottom:$project-line-height;
+    padding-left:0;
+    border-bottom:1px solid $border-color;
+}

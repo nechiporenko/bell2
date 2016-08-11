@@ -1,0 +1,29 @@
+﻿@import "../../../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+//$max-width: 1170px;
+$max-width: 1200px;
+$mobile: new-breakpoint(min-width em(480));
+$small: new-breakpoint(min-width em(640));
+$tablet: new-breakpoint(min-width em(768));
+$desktop: new-breakpoint(min-width em(992));
+$large: new-breakpoint(min-width em(1200));
+$notebook: new-breakpoint(min-width em(1360));
+
+//$column: golden-ratio(1em, 3) !default;
+//$gutter: golden-ratio(1em, 3) !default;
+
+
+$my_gutter:(30*100%)/1170;
+$column:(100 - 11*$my_gutter)/12;
+$gutter:$my_gutter;
+
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+$border-box-sizing: false;
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}

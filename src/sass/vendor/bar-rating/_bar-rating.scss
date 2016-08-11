@@ -1,0 +1,55 @@
+﻿@import "../../modules/_base.scss";
+/*Jquery Bar Rating theme*/
+.b-stars{
+    margin-bottom:$project-line-height;
+    text-align:left;
+}
+.b-stars__label{
+    font-family:$font-light-italic;
+}
+
+
+.br-theme-fontawesome-stars {
+  .br-widget {
+    white-space: nowrap;
+  
+    a {
+        
+      font: normal normal normal 22px/1 icomoon;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      text-decoration: none;
+      margin-right: 2px;
+      color:$primary-light;
+    }
+
+    a:after {
+      content: '\e923';
+    }
+
+    a.br-active:after {
+      content:'\e922';
+    }
+
+    a.br-selected:after {
+      content:'\e922';
+    }
+
+    .br-current-rating {
+        display:inline-block;
+        margin-left:10px;
+        font-size:rem(18px);
+        font-family:$font-medium;
+        color:$text-color;
+    }
+  }
+}
+
+@include media($small){
+    .b-stars{
+        .br-wrapper{
+            display:inline-block;
+            margin-left:15px;
+        }
+    }
+}

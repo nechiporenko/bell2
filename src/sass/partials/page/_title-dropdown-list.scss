@@ -1,0 +1,93 @@
+﻿@import "../../modules/_base.scss";
+/*Title Dropdown List*/
+.g-drop{
+    display:inline-block;
+    vertical-align:bottom;
+    position:relative;
+}
+
+.g-drop__btn{
+    @extend .g-clearbutton;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+
+    &.active{
+        color: $primary;
+        cursor:default;
+    }
+}
+
+.g-drop__list{
+    display:none;
+    @extend .g-clearlist;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:100%;
+    background:#fff;
+    z-index:120;
+    border-bottom-left-radius:$border-radius;
+    border-bottom-right-radius:$border-radius;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.g-drop__item{
+    display:block;
+    padding:8px 20px;
+    @include font-size(16px);
+    font-family:$font-medium;
+    font-weight:500;
+}
+
+.g-drop__link{
+    display:block;
+    white-space:nowrap;
+    margin-bottom:10px;
+}
+
+.g-drop__btn--current{
+    display:block;
+    text-transform:uppercase;
+    font-family:$font-bold;
+    font-weight:700;
+    color:$primary;
+    position:relative;
+    padding-right:20px;
+
+    &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:0; right:20px; bottom:-1px;
+        border-bottom:2px dotted $primary;
+        @include transition(border-color .2s ease-in);
+    }
+
+    &:after{
+        content:'\e904';
+        font-family:'icomoon';
+        @include font-size(14px);
+        color:$primary;
+        @include transition(color .2s ease-in);
+        position:absolute;
+        right:0; top:50%;
+        margin-top:-7px;
+    }
+
+    &:hover,
+    &:active{
+        color:darken($primary, 7%);
+
+        &:before{
+            border-bottom-color:darken($primary, 7%);
+        }
+
+        &:after{
+            color:darken($primary, 7%);
+        }
+    }
+}
+

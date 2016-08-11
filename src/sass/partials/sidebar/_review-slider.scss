@@ -1,0 +1,78 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar Review Slider*/
+.b-review{
+    margin-bottom:45px;
+    line-height:1;
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    box-sizing:border-box;
+    height:348px; //по высоте слайдера
+    position:relative;
+
+    .b-review__nav a{
+        top:-52px;
+        margin-top:0;
+    }
+    .bx-next{
+        right:0;
+    }
+    .bx-prev{
+        left:auto;
+        right:35px;
+    }
+}
+
+.b-review__slider{
+    @extend .g-clearlist;
+}
+
+.b-review__item{
+    display:block;
+}
+
+.b-review__wrapper{//обертка - нужна чтобы скрыть нижнюю линию - разделитель цитат
+    height:100%;
+    border-radius:$border-radius;
+    overflow:hidden;
+    position:relative;
+
+    &:after{
+        content:'';
+        height:2px;
+        background:#fff;
+        position:absolute;
+        left:1px; right:1px; bottom:0;
+        z-index:51;
+    }
+}
+
+.b-review__inner{
+    height:173px;
+    padding:15px 20px;
+    margin:0;
+    font-family:$font-light-italic;
+    color:$text-color-gray;
+    line-height:1.2;
+    border-bottom:1px solid $border-color;
+    box-sizing:border-box;
+    position:relative;
+}
+
+
+.b-review__text{
+    height:122px;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.b-review__cite{
+    font-family:$font-medium;
+    font-weight:500;
+    font-style:normal;
+    text-align:right;
+    position:absolute;
+    left:20px; right:20px;
+    bottom:15px;
+}

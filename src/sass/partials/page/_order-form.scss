@@ -1,0 +1,93 @@
+﻿@import "../../modules/_base.scss";
+/*Order Form*/
+.b-order{
+    border-radius:$border-radius;
+    border:1px solid $border-color;
+    padding:20px;
+    margin:8px 0 35px;
+    @extend .g-shadow-hover;
+    text-align:center;
+    font-family:$font-light;
+    color:$text-color-gray;
+    box-sizing:border-box;
+
+    p{
+        margin-bottom:8px;
+    }
+}
+
+
+.b-order__inner{
+    max-width:520px;
+    margin:0 auto;
+}
+
+.b-order__row{
+    @extend .g-row;
+}
+
+.b-order__col{
+    @extend .g-col;
+}
+
+.b-order__title{
+    @extend .g-title;
+    margin-bottom:20px;
+
+    & > span{
+        display:inline-block;
+        padding:0 20px;
+        background:#fff;
+    }
+}
+
+.b-order__btn{
+    width:100%;
+    margin-top:19px;
+    @extend .g-btn;
+    @extend .g-btn--xl;
+    padding:0 10px;
+}
+
+@include media($small){
+    .b-order{
+        height:160px;
+    }
+    .b-order__col{
+        width:50%;
+    }
+    .b-order__title{
+        margin-top:-33px;
+        margin-bottom:8px;
+    }
+}
+
+
+//long order form
+.b-order--tall{
+    height:auto;
+    
+
+    .b-order__inner{
+        max-width:450px;
+    }
+
+    p{
+        margin-bottom:$project-line-height;
+    }
+
+    .g-input,
+    .g-select{
+        height:48px;
+        @include font-size(20px);
+
+        @include placeholder{
+            color:$text-color;
+        }
+    }
+
+    @include media($large){
+        max-width:600px;
+        margin:12px auto 45px;
+    }
+}

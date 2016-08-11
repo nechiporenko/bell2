@@ -1,0 +1,85 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar Flags Slider*/
+.b-flags{//контейнер
+    padding:35px 10px;
+    margin-bottom:45px;
+    min-height:330px;
+    border-radius:$border-radius;
+    border:1px solid $border-color;
+    @extend .g-shadow-hover;
+    background:$bg-alt;
+    box-sizing:border-box;
+    position:relative;
+
+    .b-flags__nav a{
+        top:-52px;
+        margin-top:0;
+    }
+    .bx-next{
+        right:0;
+    }
+    .bx-prev{
+        left:auto;
+        right:35px;
+    }
+
+    @include media($large){
+        height:348px;//см. b-item
+    }
+}
+.b-flags__list{//слайдер
+    @extend .g-clearlist;
+}
+.b-flags__item{
+    display:block;
+    @extend .g-clearfix;
+}
+
+.b-flags__link{//линк (блок страны)
+    @extend .g-column;
+    padding:10px;
+    width:33.33333333333333%;
+    color:$text-color;
+    line-height:1;
+
+    &:hover,
+    &:active{
+        color:$primary;
+
+        .b-flags__img{
+            opacity:.8;
+        }
+    }
+}
+.b-flags__inner{
+    margin:0 auto;
+    max-width:120px;
+}
+
+.b-flags__thumb{
+    position:relative;
+    overflow:hidden;
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    margin-bottom:8px;
+    z-index:1;
+    box-sizing:border-box;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:75%; //4x3
+    }
+}
+
+.b-flags__img{
+    @extend .g-img-centered;
+    @include backface-visibility(hidden);
+    @include transition(opacity .2s ease-in);
+}
+
+.b-flags__title{
+    font-size:rem(14px);
+    text-align:center;
+    @extend .g-text-truncate;
+}

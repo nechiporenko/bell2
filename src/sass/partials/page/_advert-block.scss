@@ -1,0 +1,17 @@
+﻿@import "../../modules/_base.scss";
+/*Banner block*/
+.b-advert{
+    margin-bottom:45px;
+    border-radius:$border-radius;
+    border:1px solid $border-color;
+    height:150px;
+    text-align:center;
+    box-sizing:border-box;
+    @extend .g-shadow-hover;
+    overflow:hidden;
+    display:none;
+
+    @include media($desktop){
+        display:block;
+    }
+}

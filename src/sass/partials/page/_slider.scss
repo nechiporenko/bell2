@@ -1,0 +1,51 @@
+﻿@import "../../modules/_base.scss";
+/*Slider*/
+.b-slider{
+    margin:-15px -15px 30px;
+    position:relative;
+
+    @include media($tablet){//стрелки навигации - стили см. в vendor/bxslider
+        .b-slider__nav a{
+            top:-37px;
+            margin-top:0;
+        }
+        .bx-next{
+            right:15px;
+        }
+        .bx-prev{
+            left:auto;
+            right:50px;
+        }
+    }
+}
+.b-slider__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+
+
+.b-slider__item{
+    @extend .g-column;
+    padding:15px;
+}
+
+
+.no-js{//fallback
+    .b-slider{
+        margin:0 0 40px;
+    }
+
+    .b-slider__list{
+        margin:-15px -15px 0;
+    }
+
+    .b-slider__item{
+        @include media($small){
+            width:50%;
+        }
+
+        @include media($tablet){
+            width:33.33333333333333%;
+        }
+    }
+}

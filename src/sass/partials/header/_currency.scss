@@ -1,0 +1,97 @@
+﻿@import "../../modules/_base.scss";
+/*Header currency*/
+.b-header__curr{
+    color:$text-color-gray;
+    @include font-size(14px);
+}
+.h-curr{
+    float:left;
+    position:relative;
+}
+.h-curr__btn{
+    @extend .g-clearbutton;
+    height:32px;
+    line-height:32px;
+    text-align:left;
+
+    &:hover,
+    &:active,
+    &.active{
+        color:$primary;
+    }
+}
+.h-curr__list{
+    list-style-type:none;
+    padding:2px 0;
+    margin:0 -7px;
+    line-height:1;
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1010;
+    background:#fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15), 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+    display:none;
+}
+
+.h-curr__item{
+    display:block;
+    padding:0 7px;
+}
+
+
+//текущая валюта
+.h-curr__btn--current{
+    min-width:100px;
+    position:relative;
+
+    &:after{
+        content:'\e904';
+        font-family:'icomoon';
+        @include font-size(8px);
+        margin-left:5px;
+    }
+
+    &:hover,
+    &:active,
+    &.active{
+        &:after{
+            color:$primary;
+        }
+        .h-curr__name{
+            border-color:$primary;
+        }
+    }
+}
+
+.h-curr__name{
+    display:inline-block;
+    vertical-align:middle;
+    line-height:1;
+    padding:1px 0;
+    border-bottom:1px dotted $text-color-gray;
+}
+
+.h-curr__btn--current:after,
+.h-curr__name{
+    @include transition(all .2s ease-in);
+}
+
+
+//курсы валют
+.h-curr-info{
+    display:none;
+    height:32px;
+    line-height:32px;
+    vertical-align:middle;
+    white-space:nowrap;
+
+    b, strong{
+        font-family:$font-medium;
+        font-weight:normal;
+    }
+
+    @include media($large){
+        display:inline-block;
+    }
+}

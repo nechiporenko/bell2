@@ -1,0 +1,51 @@
+﻿@import "../../modules/_base.scss";
+/*Footer Menu*/
+.f-menu{
+    @extend .g-clearlist;
+    text-align:center;
+
+    @include media($small){
+        text-align:left;
+    }
+}
+.f-menu__item{
+    display:block;
+    @include font-size(14px);
+    font-family:$font-medium;
+    font-weight:500;
+}
+
+.f-menu__title,
+.f-menu__link{
+    display:block;
+    padding:7px 0;
+    color:$text-color-gray;
+    @extend .g-text-truncate;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+.f-menu__title--alt,
+.f-menu__link--alt{
+    text-transform:none;
+}
+
+.f-menu__title{
+    [class^="icon-"], [class*=" icon-"]{
+        margin-right:.2em;
+    }
+}
+
+.f-menu__link{
+    
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+
+    &.current{
+        color:$text-color-gray;
+        text-decoration:underline;
+        cursor:default;
+    }
+}

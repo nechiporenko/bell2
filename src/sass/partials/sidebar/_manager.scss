@@ -1,0 +1,77 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar manager info*/
+.b-manager{
+    @extend .g-row;
+    margin-bottom:10px;
+}
+.b-manager__col{
+    @extend .g-col;
+
+    @include media($tablet){
+        width:50%;
+    }
+
+    @include media($large){
+        width:100%;
+    }
+}
+.b-manager__inner{
+    padding:22px 20px;
+    height:150px;
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    background:$bg-alt;
+    @extend .g-shadow-hover;
+    line-height:1;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+.b-manager__thumb{
+    @include size(100px);
+    border-radius:$border-radius;
+    border:1px solid $border-color;
+    float:left;
+    position:relative;
+    box-sizing:border-box;
+}
+
+.b-manager__img{
+    @extend .g-img-centered;
+}
+
+.b-manager__data{
+    margin-left:115px;
+    @include font-size(14px);
+    line-height:1.8;
+}
+.b-manager__title,
+.b-manager__contact{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.b-manager__title{
+    margin-bottom:10px;
+    font-family:$font-medium;
+    font-weight:500;
+    color:$primary;
+    @include font-size(18px);
+    line-height:1;
+}
+.b-manager__contact{
+    color:#80939f;
+    text-decoration:none;
+    letter-spacing:rem(-.3px);
+
+    [class^="icon-"], [class*=" icon-"]{
+        margin-right:.1em;
+    }
+}
+a.b-manager__contact{
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}

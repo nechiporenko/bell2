@@ -1,0 +1,248 @@
+﻿//Agora Sans Pro
+//regular
+@font-face {
+	font-family:'PFAgoraSansPro-Regular';
+	src: url('../fonts/PFAgoraSansPro-Regular_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Regular_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Regular_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Regular_directwrite.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+//italic
+@font-face {
+	font-family:'PFAgoraSansPro-Italic';
+	src: url('../fonts/PFAgoraSansPro-Italic_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Italic_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Italic_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Italic_directwrite.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//bold
+@font-face {
+	font-family:'PFAgoraSansPro-Bold';
+	src: url('../fonts/PFAgoraSansPro-Bold_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Bold_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Bold_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Bold_directwrite.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+//bold-italic
+@font-face {
+	font-family:'PFAgoraSansPro-BoldItalic';
+	src: url('../fonts/PFAgoraSansPro-BoldItalic_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-BoldItalic_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-BoldItalic_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-BoldItalic_directwrite.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//medium
+@font-face {
+	font-family:'PFAgoraSansPro-Medium';
+	src: url('../fonts/PFAgoraSansPro-Medium_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Medium_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Medium_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Medium_directwrite.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//light
+@font-face {
+	font-family:'PFAgoraSansPro-Light';
+	src: url('../fonts/PFAgoraSansPro-Light_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Light_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Light_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Light_directwrite.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//light-italic
+@font-face {
+	font-family:'PFAgoraSansPro-LightItalic';
+	src: url('../fonts/PFAgoraSansPro-LightItalic_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-LightItalic_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-LightItalic_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-LightItalic_directwrite.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//thin
+@font-face {
+	font-family:'PFAgoraSansPro-Thin';
+	src: url('../fonts/PFAgoraSansPro-Thin_directwrite.eot');
+	src: url('../fonts/PFAgoraSansPro-Thin_directwrite.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFAgoraSansPro-Thin_directwrite.woff') format('woff'),
+		url('../fonts/PFAgoraSansPro-Thin_directwrite.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-04D9;
+}
+
+//icon font
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon/icomoon.eot?46a6co');
+    src:    url('../fonts/icomoon/icomoon.eot?46a6co#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon/icomoon.ttf?46a6co') format('truetype'),
+        url('../fonts/icomoon/icomoon.woff?46a6co') format('woff'),
+        url('../fonts/icomoon/icomoon.svg?46a6co#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    display:inline-block;
+    vertical-align:middle;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-previous:before {
+    content: "\e924";
+}
+.icon-quote-left:before {
+    content: "\e925";
+}
+.icon-quote-right:before {
+    content: "\e926";
+}
+.icon-star:before {
+    content: "\e922";
+}
+.icon-star-empty:before {
+    content: "\e923";
+}
+.icon-tenge-alt:before {
+    content: "\e921";
+}
+.icon-dollar:before {
+    content: "\e91e";
+}
+.icon-euro:before {
+    content: "\e91f";
+}
+.icon-tenge:before {
+    content: "\e920";
+}
+.icon-arrow-left:before {
+    content: "\e900";
+}
+.icon-arrow-right:before {
+    content: "\e901";
+}
+.icon-check:before {
+    content: "\e902";
+}
+.icon-close:before {
+    content: "\e903";
+}
+.icon-down:before {
+    content: "\e904";
+}
+.icon-down-alt:before {
+    content: "\e905";
+}
+.icon-facebook:before {
+    content: "\e906";
+}
+.icon-fire:before {
+    content: "\e907";
+}
+.icon-fly:before {
+    content: "\e908";
+}
+.icon-google-plus:before {
+    content: "\e909";
+}
+.icon-icq:before {
+    content: "\e90a";
+}
+.icon-instagram:before {
+    content: "\e90b";
+}
+.icon-left:before {
+    content: "\e90c";
+}
+.icon-location:before {
+    content: "\e90d";
+}
+.icon-menu:before {
+    content: "\e90e";
+}
+.icon-nature:before {
+    content: "\e90f";
+}
+.icon-phone:before {
+    content: "\e910";
+}
+.icon-phone-alt:before {
+    content: "\e911";
+}
+.icon-play:before {
+    content: "\e912";
+}
+.icon-right:before {
+    content: "\e913";
+}
+.icon-search:before {
+    content: "\e914";
+}
+.icon-skype:before {
+    content: "\e915";
+}
+.icon-train:before {
+    content: "\e916";
+}
+.icon-twitter:before {
+    content: "\e917";
+}
+.icon-up:before {
+    content: "\e918";
+}
+.icon-up-alt:before {
+    content: "\e919";
+}
+.icon-user:before {
+    content: "\e91a";
+}
+.icon-vk:before {
+    content: "\e91b";
+}
+.icon-mail:before {
+    content: "\e91c";
+}
+.icon-youtube:before {
+    content: "\e91d";
+}

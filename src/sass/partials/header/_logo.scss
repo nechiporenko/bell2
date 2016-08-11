@@ -1,0 +1,24 @@
+﻿@import "../../modules/_base.scss";
+
+/*Header Logo*/
+.b-header__logo{
+    display:block;
+    width:120px;
+    height:72px; //36 + 36
+    position:absolute;
+    top:0;
+    left:15px;
+    z-index:1010;
+    background:#fff;
+    @include hide-text();
+    background-image:url(../img/logo.png);
+    background-position:center center;
+    background-size: 70% 70%;
+    background-repeat:no-repeat;
+
+    @include media($desktop){
+        width:145px;
+        height:114px; //46 + 68
+        background-size:auto;
+    }
+}

@@ -1,0 +1,104 @@
+﻿@import "../../modules/_base.scss";
+/*Tour types*/
+.b-type{
+    font-size:0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.b-type__link{
+    display:inline-block;
+    max-width:85px;
+    text-decoration:none;
+    text-align:center;
+    color:$text-color;
+    line-height:1;
+
+    &:hover{
+        color:$primary;
+
+        .b-type__icon--1{
+            background-position:-75px 0;
+        }
+        .b-type__icon--2{
+            background-position:-75px -75px;
+        }
+        .b-type__icon--3{
+            background-position:-75px -150px;
+        }
+        .b-type__icon--4{
+            background-position:-75px -225px;
+        }
+        .b-type__icon--5{
+            background-position:-75px -300px;
+        }
+        .b-type__icon--6{
+            background-position:-75px -375px;
+        }
+        .b-type__icon--7{
+            background-position:-75px -450px;
+        }
+        .b-type__icon--8{
+            background-position:-75px -525px;
+        }
+        .b-type__icon--9{
+            background-position:-75px -600px;
+        }
+    }
+}
+.b-type__inner{
+    margin-bottom:40px;
+}
+.b-type__icon{
+    display:inline-block;
+    margin-bottom:5px;
+    @include size(70px);
+    background-image:url(../img/sprite.png);
+    background-repeat:no-repeat;
+}
+
+.b-type__title{
+    line-height:1.2;
+    font-family:$font-medium;
+    letter-spacing:rem(-.5px);
+    @include font-size(16px);
+
+}
+
+.b-type__icon--1{
+    background-position:0 0;
+}
+.b-type__icon--2{
+    background-position:0 -75px;
+}
+.b-type__icon--3{
+    background-position:0 -150px;
+}
+.b-type__icon--4{
+    background-position:0 -225px;
+}
+.b-type__icon--5{
+    background-position:0 -300px;
+}
+.b-type__icon--6{
+    background-position:0 -375px;
+}
+.b-type__icon--7{
+    background-position:0 -450px;
+}
+.b-type__icon--8{
+    background-position:0 -525px;
+}
+.b-type__icon--9{
+    background-position:0 -600px;
+}
+
+.no-flexbox{
+    .b-type{
+        text-align:center;
+    }
+    .b-type__link{
+        vertical-align:top;
+        margin:0 5px;
+    }
+}

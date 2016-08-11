@@ -1,0 +1,120 @@
+﻿@import "../../modules/_base.scss";
+/*Mobile Menu*/
+.page__panel{
+    position:fixed;
+    width:256px;
+    height:100%;
+    top:0;
+    left:-256px;
+    z-index:3300;//поверх оверлея
+    overflow-x:hidden;
+    overflow-y:auto;
+    will-change:left;
+    @include transition(left .3s ease);
+    @include linear-gradient(to bottom, #2d2d2d, #161616);
+
+    @include media($desktop){
+        display:none;
+    }
+
+    &.active{
+        left:0;
+    }
+}
+
+
+.m-menu{
+    @extend .g-clearlist;
+}
+
+.m-menu__item{
+    position:relative;
+
+    &.has-menu{
+        .m-menu__link{
+            padding-right:40px;
+        }
+    }
+}
+
+
+.m-menu__link{
+    display:block;
+    padding:8px 12px;
+    border-top:1px solid #808080;
+    border-bottom:1px solid #000;
+    color:#fff;
+    line-height:1.15;
+    text-decoration:none;
+    text-transform:uppercase;
+    @extend .g-text-truncate;
+
+    &:hover,
+    &:active,
+    &.current{
+        color:$primary-light;
+    }
+}
+
+
+.m-menu__label{
+    display:block;
+    height:36px;
+    line-height:36px;
+    padding:0 30px 0 12px;
+    border-bottom:1px solid #000;
+    font-size:rem(18px);
+    font-family:$font-bold;
+    font-weight:700;
+    color:$border-color;
+    text-transform:uppercase;
+    box-sizing:border-box;
+    cursor:pointer;
+    outline:0;
+
+    &:after{
+        content:'\e903';
+        font-family:'icomoon';
+        position:absolute;
+        right:12px;
+    }
+}
+
+.m-menu__divider{
+    display:block;
+    border-top:1px solid #808080;
+    border-bottom:1px solid #000;
+}
+
+//mobile submenu
+.m-menu__toggle{//кнопка показать - скрыть субменю
+    @extend .g-clearbutton;
+    @include size(36px);
+    line-height:36px;
+    position:absolute;
+    top:0; right:0;
+    font-size:rem(12px);
+    color:$border-color;
+
+    [class^="icon-"], [class*=" icon-"]{
+        @include transition(.4s transform);
+    }
+
+    &.active{
+        [class^="icon-"], [class*=" icon-"]{
+            @include transform(rotate(-180deg));
+        }
+    }
+}
+
+.m-submenu{
+    @extend .g-clearlist;
+    display:none;
+}
+
+.m-submenu__link{
+    @extend .m-menu__link;
+    text-transform:none;
+    font-size:rem(15px);
+    padding-left:20px;
+}

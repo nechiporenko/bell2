@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <title>Bell Contacts Page</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--HEADER-->
+    @@include('templates/header.html')
+
+    <!--MAIN CONTENT-->
+    <main class="page__content">
+        <div class="g-container">
+            <!--breadcrumbs-->
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Контакты
+                </li>
+            </ol>
+            <!--/breadcrumbs-->
+            <div class="g-row">
+                <!--PAGE MAIN SECTION-->
+                <section class="page__main">
+                    <h1 class="g-title">Контакты</h1>
+                    <!--google map-->
+                    <div class="b-map" id="map">
+
+                    </div>
+                    <!--/google map-->
+
+                    <!--contacts-->
+                    <div class="b-contacts">
+                        <div class="b-contacts__col b-contacts__col--info" itemscope="" itemtype="http://schema.org/LocalBusiness">
+                            <figure class="b-contacts__inner b-contacts__inner--addr">
+                                <meta itemprop="name" content="Bell Company" />
+                                <meta itemprop="description" content="Туроператор на рынке Казахстана" />
+                                <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                                    <span itemprop="addressLocality">г.Алматы</span>, <span itemprop="streetAddress">ул.Курмангазы, 58/37, оф.63</span>
+                                    <br />
+                                    <span itemprop="postalCode">050000</span>, <span itemprop="addressCountry">Казахстан</span>
+                                </div>
+                            </figure>
+                            <figure class="b-contacts__inner b-contacts__inner--phones">
+                                <b>Отдел туризма:</b>
+                                <br />
+                                <span itemprop="telephone">+7(727)272-08-08</span>
+                                <br />
+                                <span itemprop="telephone">+7(727)267-17-70</span>
+                                <br />
+                                <span itemprop="telephone">+7(727)259-77-77</span>
+                                <br />
+                                <span itemprop="telephone">+7(727)259-91-10</span>
+                            </figure>
+                        </div>
+                        <section class="b-contacts__col b-contacts__col--managers">
+                            <!--managers-->
+                            <h2 class="g-title">Наши менеджеры</h2>
+                            <div class="b-manager">
+                                <div class="b-manager__col">
+                                    <figure class="b-manager__inner">
+                                        <div class="b-manager__thumb">
+                                            <img src="img/loader.gif" data-img="http://placehold.it/100x100" class="b-manager__img js-lazyimg" alt="" />
+                                            <noscript>
+                                                <img src="http://placehold.it/100x100" class="b-manager__img" alt="" />
+                                            </noscript>
+                                        </div>
+                                        <figcaption class="b-manager__data">
+                                            <span class="b-manager__title">Анастасия</span>
+                                            <a href="tel:+77272720808" class="b-manager__contact" rel="nofollow">
+                                                <i class="icon-phone"></i>
+                                                +7(727)272-08-08
+                                            </a>
+                                            <span class="b-manager__contact">
+                                                <i class="icon-icq"></i>
+                                                675008521
+                                            </span>
+                                            <a href="mailto:anastasia@bell.kz" class="b-manager__contact">
+                                                <i class="icon-mail"></i>
+                                                anastasia@bell.kz
+                                            </a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="b-manager__col">
+                                    <figure class="b-manager__inner">
+                                        <div class="b-manager__thumb">
+                                            <img src="img/loader.gif" data-img="http://placehold.it/100x100" class="b-manager__img js-lazyimg" alt="" />
+                                            <noscript>
+                                                <img src="http://placehold.it/100x100" class="b-manager__img" alt="" />
+                                            </noscript>
+                                        </div>
+                                        <figcaption class="b-manager__data">
+                                            <span class="b-manager__title">Наталья</span>
+                                            <a href="tel:+77272720808" class="b-manager__contact" rel="nofollow">
+                                                <i class="icon-phone"></i>
+                                                +7(727)272-08-08
+                                            </a>
+                                            <span class="b-manager__contact">
+                                                <i class="icon-icq"></i>
+                                                241742331
+                                            </span>
+                                            <a href="mailto:natali@bell.kz" class="b-manager__contact">
+                                                <i class="icon-mail"></i>
+                                                natali@bell.kz
+                                            </a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <!--/managers-->
+                        </section>
+                    </div>
+                    <!--/contacts-->
+
+                    <!--order form-->
+                    <form class="b-order">
+                        <div class="b-order__title">
+                            <span>Нужна помощь?</span>
+                        </div>
+                        <p>Свяжитесь с нашим консультантом, и они помогут вам с выбором</p>
+                        <div class="b-order__inner">
+                            <div class="b-order__row">
+                                <div class="b-order__col">
+                                    <label class="g-visuallyhidden">Ваше имя</label>
+                                    <input type="text" class="g-input g-input--alt" placeholder="Ваше имя *" required />
+
+                                    <label class="g-visuallyhidden">Номер телефона</label>
+                                    <input type="text" class="g-input g-input--alt js-phone-input" placeholder="Номер телефона *" required />
+                                </div>
+                                <div class="b-order__col">
+                                    <button type="submit" class="b-order__btn">Оставить заявку</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--/order form-->
+                </section>
+                <!--/PAGE MAIN SECTION-->
+
+                <!--PAGE SIDEBAR-->
+                <aside class="page__side">
+                    <!--single item-->
+                    <div class="g-title">
+                        <i class="icon-fire g-red-color"></i>
+                        <a href="tours-sale.html">Горящие туры</a>
+                    </div>
+                    <a href="#" class="b-item b-item--side">
+                        <figure class="b-item__inner">
+                            <div class="b-item__thumb">
+                                <img src="img/loader.gif" data-img="http://placehold.it/290x192" class="b-item__img js-lazyimg" alt="" />
+                                <noscript>
+                                    <img src="http://placehold.it/290x192" class="b-item__img" alt="" />
+                                </noscript>
+                            </div>
+
+                            <figcaption class="b-item__data">
+                                <header class="b-item__title">Сейшельские острова</header>
+                                <p class="b-item__description">Краткое описание тура всего в две строчки максимум</p>
+                                <span class="b-item__price">
+                                    от <b>15 765 тг</b>
+                                </span>
+                                <footer class="b-item__footer">
+                                    <div class="b-item__bottom">7 ночей, 2 взрослых, с 15.06</div>
+                                    <span class="b-item__label">Подробнее</span>
+                                </footer>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <!--/single item-->
+                </aside>
+                <!--/PAGE SIDEBAR-->
+            </div><!--/.g-row-->
+        </div><!--/.g-container-->
+
+        <!--mobile menu-->
+        @@include('templates/mobile-menu.html')
+
+        <!--modal windows-->
+        @@include('templates/modals.html')
+    </main>
+    <!--/MAIN CONTENT-->
+
+    <!--FOOTER-->
+    @@include('templates/footer.html')
+
+    <!--google map-->
+    <script>
+        function initialize() {
+            var map_lating = new google.maps.LatLng(43.244125, 76.94392),
+
+                map_options = {
+                    zoom: 17,
+                    center: map_lating,
+                    panControl: false,
+                    zoomControl: true,
+                    scrollwheel: false,
+                    streetViewControl: false,
+                    scaleControl: true,
+                    mapTypeId: google.maps.MapTypeId.ROAD
+                },
+
+                map = new google.maps.Map(document.getElementById('map'),
+                map_options),
+
+                marker = new google.maps.Marker({
+                    position: map_lating,
+                    icon: "img/marker.png",
+                    map: map
+                }),
+
+                info = new google.maps.InfoWindow({
+                    content: '<div class="b-map__title">Компания Bell</div>'
+                });
+                
+
+            google.maps.event.addListener(marker, 'mouseover', function () {
+                info.open(map, marker);
+            });
+
+            google.maps.event.addListener(marker, 'mouseout', function () {
+                info.close(map, marker);
+            });
+
+
+            google.maps.event.addDomListener(window, 'resize', function () {
+                var center = map.getCenter();
+
+                google.maps.event.trigger(map, 'resize');
+                
+                map.setCenter(center);
+            });
+        };
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+                'callback=initialize';
+            document.body.appendChild(script);
+        };
+
+        window.onload = loadScript;
+    </script>
+    <!--/google map-->
+</body>
+</html>

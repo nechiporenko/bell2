@@ -1,0 +1,326 @@
+﻿@import "../../modules/_base.scss";
+/*Hero slider*/
+.b-hero{
+    line-height:1;
+
+    .bx-wrapper,
+    .bx-viewport{
+        height:100% !important;
+    }
+}
+.b-hero__wrapper{//оболочка-распорка
+    position:relative;
+    background:darken($primary, 20%);
+    min-height:280px;
+    overflow:hidden;
+    
+    &:after{
+        content:'';
+        display:block;
+        padding-top:584*100%/1000;
+    }
+
+    @include media($desktop){//на десктопе - фиксированная высота (584)
+        height:584px;
+
+        &:after{
+            display:none;
+        }
+    }
+}
+
+.b-hero__inner{
+    position:absolute;
+    top:0; right:0; bottom:0; left:0;
+}
+
+//слайдер
+.b-hero__slider{
+    @extend .g-clearlist;
+    height:100%;
+
+    .g-container{
+        position:relative;
+        height:100%;
+    }
+}
+.b-hero__item{
+    display:block;
+    height:100% !important;
+    position:relative;
+}
+
+.b-hero__pager{//кастомный пейджер
+    position:absolute;
+    width:100%;
+    top:10px;
+    z-index:100;
+}
+
+//изображения слайдера
+.b-hero__bg{
+    @extend .b-hero__inner;
+    z-index:50;
+    background-position:center top;
+    background-repeat:no-repeat;
+}
+
+.b-hero__bg--xl{
+    display:none;
+}
+
+//тексты слайдера
+.b-hero__info{
+    padding:35px 25px 25px;
+    position:relative;
+    z-index:51;
+    background:$primary-light;
+    background:rgba($primary-light, .7);
+    box-sizing:border-box;
+}
+
+.b-hero__title{
+    display:block;
+    margin-bottom:10px;
+    font-family:Arial, sans-serif;
+    font-size:rem(18px);
+    text-transform:uppercase;
+    text-decoration:none;
+    color:$text-color;
+    line-height:1.1;
+
+    .wf-active &{
+        font-family:$font-bold;
+    }
+
+    .no-js &{
+        font-family: Arial, sans-serif;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.b-hero__caption{
+    font-family:Arial, sans-serif;
+    line-height:1.3;
+    letter-spacing:rem(1px);
+
+    .wf-active &{
+        font-family:$font-thin;
+    }
+
+    .no-js &{
+        font-family: Arial, sans-serif;
+    }
+}
+
+.b-hero__more{
+    display:inline-block;
+    margin-top:10px;
+    font-family:Arial, sans-serif;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+    line-height:1;
+    letter-spacing:0;
+    border-bottom:1px solid $primary;
+
+    .wf-active &{
+        font-family:$font-bold;
+    }
+
+    .no-js &{
+        font-family: Arial, sans-serif;
+    }
+
+    &:hover{
+        color:darken($primary, 7%);
+    }
+}
+
+
+@include media($small){
+    .b-hero__info{
+        position:absolute;
+        top:25px;
+        left:0; right:15px;
+    }
+    .b-hero__pager{
+        top:35px;
+    }
+}
+
+@include media($tablet){
+    .b-hero__info{
+        top:50px;
+    }
+    .b-hero__pager{
+        top:60px;
+    }
+    .b-hero__title{
+        font-size:rem(24px);
+    }
+
+    .b-hero__caption{
+        font-size:rem(18px);
+    }
+}
+
+@include media($desktop){
+    .b-hero__bg--xs{
+        display:none;
+    }
+    .b-hero__bg--xl{
+        display:block;
+    }
+
+    .b-hero__info{
+        padding:25px;
+        top:200px;
+        right:0;
+        left:auto;
+        width:720px;
+        height:384px; //584 - 200
+
+        &:before,
+        &:after{
+            content:'';
+            position:absolute;
+            top:0; bottom:0;
+        }
+
+        &:before{
+            width:120px;
+            left:-120px;
+            @include linear-gradient(to right, rgba($primary-light, .16), rgba($primary-light, .64));
+        }
+
+        &:after{
+            width:80px;
+            right:-80px;
+            @include linear-gradient(to left, rgba($primary-light, .16), rgba($primary-light, .64));
+            display:none;
+        }
+    }
+
+    .b-hero__pager{
+        top:410px;
+
+        .bx-pager{
+            text-align:right;
+            padding-right:25px;
+        }
+    }
+
+    .b-hero__title{
+        @include font-size(32px);
+    }
+    .b-hero__caption{
+        @include font-size(26px);
+        text-align:right;
+    }
+    .b-hero__more{
+        @include font-size(20px);
+    }
+
+}
+
+@include media($notebook){
+    .b-hero__info{
+        &:after{
+            display:block;
+        }
+    }
+}
+
+
+/*Hero Booking section*/
+.b-booking{
+    margin-top:-50px;
+    margin-bottom:40px;
+
+    @include media($desktop){
+        margin-top:-190px;
+    }
+}
+
+.b-booking__list{
+    @extend .g-clearlist;
+    font-size:0;
+}
+.b-booking__item{
+    display:inline-block;
+    @include font-size(18px);
+    margin-right:5px;
+
+    &:last-child{
+        margin-right:0;
+    }
+
+    &.current{
+        .b-booking__link{
+            background:$primary;
+            border-bottom-color:$primary;
+            border-top-color:$primary-light;
+            color:#fff;
+            cursor:default;
+        }
+    }
+}
+
+.b-booking__link{
+    display:block;
+    padding:0 25px;
+    min-width:200px;
+    height:50px;
+    line-height:40px;
+    font-family:$font-bold;
+    text-decoration:none;
+    text-transform:uppercase;
+    white-space:nowrap;
+    color:#fff;
+    box-sizing:border-box;
+    background:lighten($primary, 15%);
+    border-top:5px solid lighten($primary, 15%);
+    border-bottom:5px solid lighten($primary, 15%);
+    border-top-left-radius:$border-radius;
+    border-top-right-radius:$border-radius;
+    position:relative;
+    z-index:120;
+
+    [class^="icon-"], [class*=" icon-"]{
+        vertical-align:baseline;
+    }
+
+    &:hover,
+    &:active{
+        background:$primary;
+        border-bottom-color:$primary;
+        border-top-color:$primary-light;
+        color:#fff;
+    }
+
+    @include media($small){
+        min-width:initial;
+        color:$text-color-gray;
+        background:#fff;
+        border-top-color:#fff;
+        border-bottom-color:#fff;
+    }
+}
+
+.b-booking__tabs{
+    padding:25px;
+    min-height:150px;
+    background:$primary;
+    color:#fff;
+    border-radius:$border-radius;
+    border-top-left-radius:0;
+    position:relative;
+    z-index:120;
+}
+
+

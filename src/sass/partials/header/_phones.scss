@@ -1,0 +1,57 @@
+﻿@import "../../modules/_base.scss";
+/*Header phones block*/
+.b-header__phone{
+    font-size:0;
+}
+.h-callback{
+    @extend .g-btn;
+    @extend .g-btn--alt;
+    height:32px;
+    padding:0 20px;
+    margin-left:18px;
+    line-height:34px;
+    @include font-size(14px);
+    display:none;
+}
+
+.h-callback__xs{
+    display:inline-block;
+    padding:0;
+    width:32px;
+    line-height:32px;
+}
+
+@include media($desktop){
+    .h-callback{
+        display:inline-block;
+    }
+    .h-callback__xs{
+        display:none;
+    }
+}
+
+
+.h-phone{
+    display:none;
+    vertical-align:middle;
+    height:32px;
+    line-height:32px;
+    font-family:$font-bold;
+    font-size:rem(18px);
+    color:$text-color;
+    text-decoration:none;
+    white-space:nowrap;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+
+    @include media($mobile){
+        display:inline-block;
+    }
+
+    @include media($small){
+        @include font-size(22px);
+    }
+}

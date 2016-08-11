@@ -1,0 +1,39 @@
+@import "../modules/base";
+/*Site Header*/
+
+.b-header{
+    width:100%;
+    position:relative;
+    z-index:1000;
+    box-shadow:0 3px 6px rgba(#000, .15);
+}
+.b-header__inner{
+    @extend .g-container;
+    position:relative;
+    padding-left:135px;//карман для лого
+}
+
+
+@include media($desktop){
+    .page{//body
+        padding-top:114px;
+    }
+    .b-header{
+        position:fixed;
+        top:0; left:0;
+    }
+
+    .b-header__inner{
+        padding-left:195px;//увеличиваем размер лого
+    }
+}
+
+@import "header/_header-top.scss";
+@import "header/_logo.scss";
+@import "header/_currency.scss";
+@import "header/_social.scss";
+@import "header/_phones.scss";
+
+@import "header/_header-main.scss";
+@import "header/_search.scss";
+

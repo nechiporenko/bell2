@@ -1,0 +1,61 @@
+﻿@import "../../modules/_base.scss";
+/*Header main section*/
+.b-header__main{
+    background:$primary;
+    color:#fff;
+
+    .b-header__inner{
+        height:36px;
+        line-height:36px;
+        padding-right:100px;//карман для кнопок
+    }
+}
+
+.b-header__action{
+    width:100px;
+    box-sizing:border-box;
+    padding-right:15px;
+    position:absolute;
+    top:0; right:0; bottom:0;
+    font-size:0;
+    text-align:right;
+    z-index:900;
+}
+
+.h-btn{
+    @extend .g-btn;
+    @extend .g-btn--alt;
+    @include size(32px);
+    line-height:32px;
+    padding:0;
+    margin-left:10px;
+}
+
+.h-btn--search{
+    margin-left:0;
+}
+
+@include media($desktop){
+    .b-header__main{
+        .b-header__inner{
+            height:68px;
+            line-height:68px;
+        }
+    }
+    .h-btn--menu{
+        display:none;
+    }
+
+    .h-btn--search{
+        background:$primary;
+        text-align:right;
+        color:#fff;
+
+        &:hover,
+        &:active{
+            background:$primary;
+            color:$primary-light;
+            box-shadow:none;
+        }
+    }
+}

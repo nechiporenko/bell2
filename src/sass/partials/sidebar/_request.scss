@@ -1,0 +1,28 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar Request Form*/
+.b-request{
+    @extend .b-subscribe;
+    height:auto;
+    margin-bottom:40px;
+}
+
+.b-request__inner{
+    @extend .b-order__inner;
+}
+.b-request__title{
+    @extend .b-subscribe__title;
+}
+
+.b-request__info{
+    margin-bottom:10px;
+    text-align:justify;
+}
+
+.b-request__input{
+    @extend .b-subscribe__input;
+}
+.b-request__btn{
+    @extend .b-subscribe__btn;
+    margin-top:15px;
+    padding:0 10px;
+}

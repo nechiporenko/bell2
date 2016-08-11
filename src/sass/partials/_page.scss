@@ -1,0 +1,42 @@
+﻿@import "../modules/_base.scss";
+/*Page Grid*/
+.page__main,
+.page__side{
+    @extend .g-column;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+@include media($large){
+    .page__main{
+        width:880*100%/1200;
+    }
+    .page__side{
+        width:100-(880*100%/1200);
+    }
+}
+
+.page__article{
+    line-height:1.24;//уплотним текст статьи
+}
+
+@import "page/_hero.scss";//hero-слайдер на главной странице + вкладки бронирования
+@import "page/_breadcrumbs.scss"; //хлебные крошки
+@import "page/_slider.scss"; //слайдеры предложений
+@import "page/_item.scss";//блоки слайдера предложений
+@import "page/_item-list.scss";//статичный вывод блоков
+@import "page/_tour-type.scss";//поиск тура по типу отдыха - блок с иконками
+@import "page/_order-form.scss";//блок Оставить заявку
+@import "page/_advert-block.scss";//рекламный блок (850х150)
+@import "page/_title-dropdown-list.scss"; //выпадающий список в заголовке (для перезагрузки слайдера)
+@import "page/_share-this-block.scss";//блок для share this
+//@import "page/_image-slider.scss";//"стандартный" слайдер изображений на странице Страна
+@import "page/_contacts.scss";//страница Контакты
+@import "page/_tabs.scss";//вкладки на странице (тур)
+@import "page/_gallery.scss";//галерея изображений (тур)
+@import "page/_comments.scss";//блок комментариев (тур)
+@import "page/_countries-list.scss";//список стран на странице
+@import "page/_scroll-up.scss";//кнопка скролла страницы
+
+
+

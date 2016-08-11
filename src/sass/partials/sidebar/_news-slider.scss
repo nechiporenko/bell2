@@ -1,0 +1,71 @@
+﻿@import "../../modules/_base.scss";
+/*Sidebar News slider*/
+.b-news{
+    margin-bottom:45px;
+    position:relative;
+
+    .b-news__nav a{
+        top:-52px;
+        margin-top:0;
+    }
+    .bx-next{
+        right:0;
+    }
+    .bx-prev{
+        left:auto;
+        right:35px;
+    }
+}
+.b-news__slider{
+    @extend .g-clearlist;
+}
+.b-news__item{
+    display:block;
+}
+
+.b-news__link{
+    @include font-size(14px);
+    text-decoration:none;
+    color:$text-color;
+    line-height:1;
+
+    &:hover{
+        color:$primary;
+
+        .b-news__img{
+            opacity:.8;
+        }
+    }
+}
+.b-news__inner{
+    margin:0;
+    padding:16px 0;
+    border-bottom:1px solid $border-color;
+    @extend .g-clearfix;
+}
+
+.b-news__thumb{
+    @extend .b-manager__thumb;
+    @include size(50px);
+}
+.b-news__img{
+    @extend .b-flags__img;
+}
+
+.b-news__data{
+    margin-left:65px;
+}
+.b-news__quote{
+    height:50px;
+    max-width:520px;
+    margin-bottom:6px;
+    overflow:hidden;
+    line-height:1.25;
+}
+
+.b-news__date{
+    display:block;
+    @extend .g-text-truncate;
+    font-family:$font-light-italic;
+    color:$text-color-gray;
+}

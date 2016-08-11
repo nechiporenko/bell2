@@ -1,0 +1,157 @@
+﻿@import "../../modules/_base.scss";
+/*Tour Comments block*/
+.b-comment{}
+//Comment block
+.b-comment__panel{
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    margin-bottom:20px;
+}
+.b-comment__header{
+    @extend .g-clearfix;
+    padding:10px 15px 10px 10px;
+    background:$bg-alt;
+    border-bottom:1px solid $border-color;
+}
+
+
+.b-comment__rating{
+    white-space:nowrap;
+    [class^="icon-"], [class*=" icon-"]{
+        margin:0 .1em;
+        color:$primary-light;
+        vertical-align:baseline;
+    }
+}
+
+.b-comment__author,
+.b-comment__value{
+    @extend .g-column;
+    padding-left:68px;
+    font-family:$font-medium;
+}
+
+.b-comment__author{
+    height:50px;
+}
+
+.b-comment__author{
+    padding-top:5px;
+    position:relative;
+
+    &:before{
+        content:'';
+        width:51px;
+        height:50px;
+        background:url(../img/comment.png) no-repeat;
+        position:absolute;
+        left:0; top:0;
+    }
+}
+
+
+@include media($tablet){
+    .b-comment__author,
+    .b-comment__value{
+        width:(100%-$grid-gutter)/2;
+    }
+    .b-comment__value{
+        margin-left:$grid-gutter;
+        padding-left:0;
+        height:50px;
+        line-height:50px;
+        text-align:right;
+    }
+}
+
+.b-comment__name{
+    display:block;
+    @extend .g-text-truncate;
+    color:$primary;
+    font-size:rem(18px);
+}
+
+.b-comment__date{
+    display:block;
+    font-size:rem(16px);
+    color:$text-color-gray;
+}
+
+.b-comment__quote{
+    padding:25px 30px 35px 45px;
+    margin:0;
+    position:relative;
+    color:$text-color-gray;
+    line-height:1.25;
+
+    &:before,
+    &:after{
+        position:absolute;
+        color:$primary;
+        font-size:rem(21px);
+        font-family:'icomoon';
+    }
+
+    &:before{
+        content:'\e925';
+        left:10px;
+        top:15px;
+    }
+
+    &:after{
+        content:'\e926';
+        right:10px;
+        bottom:15px;
+    }
+}
+
+//Comment form
+.b-comment__form{
+    @extend .b-order;
+    height:auto;
+    margin-top:50px;
+}
+
+.b-comment__title{
+    @extend .b-order__title;
+    margin-bottom:30px;
+}
+
+.b-comment__inner{
+    @extend .b-order__inner;
+}
+
+.b-comment__row{
+    @extend .g-row;
+}
+
+.b-comment__col{
+    @extend .g-col;
+}
+
+.b-comment__input{
+    @extend .g-input;
+    @extend .g-input--alt;
+    margin-bottom:$project-line-height;
+}
+
+.b-comment__textarea{
+    @extend .g-textarea;
+    @extend .g-textarea--alt;
+    margin-bottom:$project-line-height;
+}
+
+@include media($small){
+    .b-comment__col{
+        width:50%;
+    }
+}
+
+@include media($tablet){
+    .b-comment__rating{
+        display:inline-block;
+    }
+    .b-comment__caption{
+        text-align:right;
+    }
+}

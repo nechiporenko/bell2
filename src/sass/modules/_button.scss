@@ -1,0 +1,85 @@
+﻿@import "base";
+/* Buttons */
+.g-btn{
+    display:inline-block;
+    vertical-align:middle;
+    height:46px;
+    line-height:46px;
+    padding:0 15px;
+    color:#fff;
+    text-align: center;
+    @include font-size($project-font-size);
+    font-family:$font-bold;
+    text-decoration: none;
+    text-transform:uppercase;
+    white-space: nowrap;
+    background: $primary;
+    border-radius:$border-radius;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline:0;
+
+    &:hover,
+    &:active{
+        color:#fff;
+        background:darken($primary, 7%);
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 8px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    &:disabled{
+        background:#e0e0e0;
+        box-shadow:none;
+        color:$text-color;
+    }
+
+    @include media($tablet){
+        padding:0 40px;
+    }
+}
+
+.g-clearbutton{
+    display:inline-block;
+    vertical-align:middle;
+    border:none;
+    background:none;
+    padding:0;
+    cursor: pointer;
+    text-align:center;
+    text-decoration:none;
+    white-space:nowrap;
+    box-sizing: border-box;
+    outline:0;   
+}
+
+.g-btn,
+.g-clearbutton{
+    &:active{
+        @include transform(translateY(2px));
+    }
+}
+
+.g-btn--alt{
+    color:$text-color;
+    background:$primary-light;
+
+    &:hover,
+    &:active{
+        background:darken($primary-light, 7%);
+        color:$text-color;
+    }
+}
+
+.g-btn--clear{
+    color:$text-color-gray;
+    background:none;
+    box-shadow:inset 0 0 1px 0 $text-color-gray;
+}
+
+.g-btn--xl{
+    height:60px;
+    line-height:60px;
+    @include font-size(20px);
+}
+
+
