@@ -262,21 +262,55 @@
 
                 <!--PAGE SIDEBAR-->
                 <aside class="page__side">
-                    <!--subscribe-->
-                    <form class="b-subscribe">
-                        <div class="b-subscribe__inner">
-                            <span class="b-subscribe__title">Рассылка</span>
-                            <div class="b-subscribe__info">
-                                Хотите не пропускать все самые актуальные и горящие акции и предложения? Будьте в курсе всегда! Просто оставьте свой электронный адрес и мы пришлем  вам только  лучшие предложения!
+                    <!--filter-->
+                    <span class="g-title">Фильтр</span>
+                    <form class="b-filter">
+                        <div class="b-filter__inner">
+                            <label class="b-filter__title">Страна</label>
+                            <select class="g-select g-select--alt js-select">
+                                <option value="Болгария">Болгария</option>
+                                <option value="Вьетнам">Вьетнам</option>
+                                <option value="Грузия" selected>Грузия</option>
+                                <option value="Испания">Испания</option>
+                                <option value="Турция">Турция</option>
+                            </select>
+                            <label class="b-filter__title">Тип</label>
+                            <select class="g-select g-select--alt js-select">
+                                <option value="Автобусные туры">Автобусные туры</option>
+                                <option value="Авиа туры">Авия туры</option>
+                            </select>
+                            <label class="b-filter__title">Экскурсии</label>
+                            <select class="g-select g-select--alt js-select">
+                                <option value="Индивидуальные">Индивидуальные</option>
+                                <option value="Групповые">Групповые</option>
+                            </select>
+                            <label class="b-filter__title">Продолжительность</label>
+                            <select class="g-select g-select--alt js-select">
+                                <option value="3">3 дня / 2 ночи</option>
+                                <option value="7">7 дней</option>
+                                <option value="15">15 дней</option>
+                            </select>
+                            <label class="b-filter__title">Цена</label>
+                            <div class="b-filter__row">
+                                <div class="b-filter__column">
+                                    <select class="g-select g-select--alt js-select">
+                                        <option value="0" selected disabled>От</option>
+                                        <option value="100">От 100$</option>
+                                        <option value="300">От 300$</option>
+                                    </select>
+                                </div>
+                                <div class="b-filter__column">
+                                    <select class="g-select g-select--alt js-select">
+                                        <option value="0" selected disabled>До</option>
+                                        <option value="500">До 500$</option>
+                                        <option value="1000">До 1000$</option>
+                                    </select>
+                                </div>
                             </div>
-                            <label class="g-visuallyhidden">Ваше имя</label>
-                            <input type="text" class="b-subscribe__input" placeholder="Ваше имя *" required />
-                            <label class="g-visuallyhidden">Ваш email</label>
-                            <input type="email" class="b-subscribe__input" placeholder="Ваш email *" required />
-                            <button type="submit" class="b-subscribe__btn">Подписаться</button>
+                            <button type="submit" class="b-filter__btn">Фильтровать</button>
                         </div>
                     </form>
-                    <!--/subscribe-->
+                    <!--filter-->
 
                     <!--managers-->
                     <div class="g-title">
