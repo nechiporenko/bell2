@@ -18,6 +18,7 @@
 // Маска для телефонного номера
 // Покажем скрытый SEO текст при клике на ссылку
 // Стилизуем таблицы в описании тура
+// Проверка полей цены для фильтра туров
 // Хелперы
 // Если браузер не знает о плейсхолдерах в формах
 
@@ -785,6 +786,58 @@ jQuery(document).ready(function ($) {
             $el.wrap('<div class="g-table-wrap"></div>');
         };
     });
+
+    //
+    // Проверка полей цены для фильтра туров
+    //---------------------------------------------------------------------------------------
+    function checkPriceInputs() {
+        var $price = $('.js-price'),//поля для проверки
+            $priceMin = $price.filter('.js-price--min'),//поле мин.цена
+            $priceMax = $price.filter('.js-price--max'),//поле макс.цена
+            min = +$priceMin.val(), //минимальное значение поля
+            max = +$priceMax.val(); //максимальное значение поля
+
+        $price.on('keydown', function (e) {//разрешим вводить только цифры в поля
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+            }
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+        
+
+        $priceMin.on('blur', function () {//проверяем поле мин.цены после потери фокуса
+            var num = Math.round($(this).val()), //округлили до целого
+                priceMax = +$priceMax.val(); //текущее значение макс.цены
+            if (isNaN(num) || num < min || num > max) {
+                num = min;
+            };            
+            if (num > priceMax) {
+                num = priceMax;
+            };
+
+            $(this).val(num);
+        });
+
+        $priceMax.on('blur', function () {//проверяем поле макс.цены после потери фокуса
+            var num = Math.round($(this).val()),
+                priceMin = +$priceMin.val();
+            if (isNaN(num) || num < min || num > max) {
+                num = max;
+            };
+            if (num < priceMin) {
+                num = priceMin;
+            };
+            $(this).val(num);
+        });
+    }
+    if ($('.js-price').length) {
+        checkPriceInputs();
+    };
+
 
     //
     // Хелперы

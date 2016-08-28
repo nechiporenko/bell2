@@ -4347,6 +4347,11 @@ a.b-manager__contact:hover, a.b-manager__contact:active {
   background: #f3f5f7;
 }
 
+.b-filter .g-label {
+  margin-bottom: 0;
+  font-family: "PFAgoraSansPro-LightItalic";
+}
+
 .b-filter__inner {
   max-width: 520px;
   margin: 0 auto;
