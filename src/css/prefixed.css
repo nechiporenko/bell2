@@ -955,6 +955,7 @@ textarea {
 .g-select.error,
 .g-textarea.error,
 .error.b-comment__textarea {
+  color: red;
   border-color: red;
   box-shadow: inset 0 0 4px rgba(255, 0, 0, 0.5);
 }

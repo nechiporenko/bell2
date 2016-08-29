@@ -896,11 +896,62 @@ jQuery(document).ready(function ($) {
     // Проверка полей цены для фильтра туров
     //---------------------------------------------------------------------------------------
     function checkPriceInputs() {
-        var $price = $('.js-price'),//поля для проверки
+        var $form = $('.b-filter'),//форма с фильтрами
+            $price = $form.find($('.js-price')),//поля для проверки
             $priceMin = $price.filter('.js-price--min'),//поле мин.цена
             $priceMax = $price.filter('.js-price--max'),//поле макс.цена
-            min = +$priceMin.val(), //минимальное значение поля
-            max = +$priceMax.val(); //максимальное значение поля
+            min = +$priceMin.val(), //минимальное значение поля мин.цена
+            max = +$priceMax.val(), //максимальное значение поля макс.цена
+            method = {};
+
+        method.checkMinValue = function () {//проверяем поле мин.цены
+            var num = Math.round($priceMin.val()), //округлили до целого
+                error = false,//предполагаем что ошибок нет
+                priceMax = +$priceMax.val(); //текущее значение макс.цены
+            if (isNaN(num) || num < min || num > max) {
+                num = min;
+                error = true;
+            };
+            if (num > priceMax) {
+                num = priceMax;
+                error = true;
+            };
+
+            $priceMin.val(num);
+
+            if (error) {//если меняли значение - на 2 сек. выделим поле красным
+                method.showError($priceMin);
+            };
+            return error;
+        };
+
+        method.checkMaxValue = function () {//проверяем поле макс.цены
+            var num = Math.round($priceMax.val()),
+                error = false,
+                priceMin = +$priceMin.val();
+            if (isNaN(num) || num < min || num > max) {
+                num = max;
+                error = true;
+            };
+            if (num < priceMin) {
+                num = priceMin;
+                error = true;
+            };
+
+            $priceMax.val(num);
+
+            if (error) {//если меняли значение - на 2 сек. выделим поле красным
+                method.showError($priceMax);
+            };
+            return error;
+        };
+
+        method.showError = function (el) {//покажем что в поле была ошибка
+            el.addClass('error');
+            setTimeout(function () {
+                el.removeClass('error');
+            }, 2000);
+        };
 
         $price.on('keydown', function (e) {//разрешим вводить только цифры в поля
             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -913,31 +964,23 @@ jQuery(document).ready(function ($) {
             }
         });
         
+        $priceMin.on('blur', method.checkMinValue);//проверяем поле мин.цены при потере фокуса
+        $priceMax.on('blur', method.checkMaxValue);//проверяем поле макс.цены при потере фокуса
 
-        $priceMin.on('blur', function () {//проверяем поле мин.цены после потери фокуса
-            var num = Math.round($(this).val()), //округлили до целого
-                priceMax = +$priceMax.val(); //текущее значение макс.цены
-            if (isNaN(num) || num < min || num > max) {
-                num = min;
-            };            
-            if (num > priceMax) {
-                num = priceMax;
-            };
-
-            $(this).val(num);
+        $form.on('submit', function (e) {//проверка формы перед отправкой
+            e.preventDefault();//отключили стандартную отправку
+            var price_min_error = method.checkMinValue(),
+                price_max_error = method.checkMaxValue();
+            
+            if (price_min_error || price_max_error) {
+                console.log('Были ошибки в полях цены, форма не отправлена');
+            } else {//пример отправки
+                console.log('Отправляем данные!');
+                var data = $form.serialize();
+                //...
+            }
         });
 
-        $priceMax.on('blur', function () {//проверяем поле макс.цены после потери фокуса
-            var num = Math.round($(this).val()),
-                priceMin = +$priceMin.val();
-            if (isNaN(num) || num < min || num > max) {
-                num = max;
-            };
-            if (num < priceMin) {
-                num = priceMin;
-            };
-            $(this).val(num);
-        });
     }
     if ($('.js-price').length) {
         checkPriceInputs();
