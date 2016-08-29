@@ -795,8 +795,8 @@ jQuery(document).ready(function ($) {
             $price = $form.find($('.js-price')),//поля для проверки
             $priceMin = $price.filter('.js-price--min'),//поле мин.цена
             $priceMax = $price.filter('.js-price--max'),//поле макс.цена
-            min = +$priceMin.val(), //минимальное значение поля мин.цена
-            max = +$priceMax.val(), //максимальное значение поля макс.цена
+            min = +$priceMin.data('min'), //минимальное значение поля мин.цена
+            max = +$priceMax.data('max'), //максимальное значение поля макс.цена
             method = {};
 
         method.checkMinValue = function () {//проверяем поле мин.цены
