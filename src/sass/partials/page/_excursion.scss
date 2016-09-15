@@ -1,0 +1,27 @@
+﻿@import "../../modules/_base.scss";
+/*Excursion*/
+.b-excursion{
+    display:table;
+    width:100%;
+    border:1px solid $border-color;
+    border-radius:$border-radius;
+    box-sizing:border-box;
+    font-family:$font-medium;
+}
+.b-excursion__title,
+.b-excursion__entry{
+    display:table-cell;
+    vertical-align:middle;
+    padding:$project-line-height/2;
+}
+.b-excursion__title{
+    background:$bg-alt;
+    border-right:1px solid $border-color;
+    font-family:$font-bold;
+    color:$title-color;
+    text-align:center;
+
+    @include media($desktop){
+        padding:$project-line-height/2 2*$project-line-height;
+    }
+}

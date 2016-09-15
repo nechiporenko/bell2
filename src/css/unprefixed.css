@@ -3923,6 +3923,37 @@ input[type=radio].g-radio:checked + label.g-radio-label {
   }
 }
 
+/*Excursion*/
+.b-excursion {
+  display: table;
+  width: 100%;
+  border: 1px solid #dfe5e9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "PFAgoraSansPro-Medium";
+}
+
+.b-excursion__title,
+.b-excursion__entry {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 11px;
+}
+
+.b-excursion__title {
+  background: #f3f5f7;
+  border-right: 1px solid #dfe5e9;
+  font-family: "PFAgoraSansPro-Bold";
+  color: #3a3a3a;
+  text-align: center;
+}
+
+@media screen and (min-width: 62em) {
+  .b-excursion__title {
+    padding: 11px 44px;
+  }
+}
+
 /*Scroll-up button*/
 .scroll-up-btn {
   height: 50px;
